@@ -56,3 +56,9 @@ resource "azurerm_key_vault_access_policy" "agent" {
     "Set"
   ]
 }
+
+resource "null_resource" "introspec" {
+  provisioner "local-exec" {
+    command = "whoami && env"
+  }
+}
